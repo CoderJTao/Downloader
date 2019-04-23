@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EJk-wP-ydl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--单文件-->
+        <scene sceneID="8od-Lg-HnL">
+            <objects>
+                <viewController title="单文件" id="5f4-qo-S1U" customClass="SingleController" customModule="DownLoader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mFu-rE-p8J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iOs-Io-uDC">
+                                <rect key="frame" x="27" y="150" width="321" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1M-Sb-sDl">
+                                <rect key="frame" x="140" y="294" width="94" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="开始"/>
+                                <connections>
+                                    <action selector="startClick:" destination="5f4-qo-S1U" eventType="touchUpInside" id="zXy-qO-57v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6z-WD-ggG">
+                                <rect key="frame" x="140" y="354" width="94" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="暂停"/>
+                                <connections>
+                                    <action selector="pauseClick:" destination="5f4-qo-S1U" eventType="touchUpInside" id="Zfh-wW-iOH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p29-fE-Dgs">
+                                <rect key="frame" x="140" y="418" width="94" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="继续"/>
+                                <connections>
+                                    <action selector="resumeClick:" destination="5f4-qo-S1U" eventType="touchUpInside" id="qcU-d4-hh3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYV-Cz-6rS">
+                                <rect key="frame" x="140" y="482" width="94" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="停止"/>
+                                <connections>
+                                    <action selector="stopClick:" destination="5f4-qo-S1U" eventType="touchUpInside" id="Oq3-Bt-boO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Kwe-Ix-5dK"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="iOs-Io-uDC" id="naO-LE-Y9c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LtE-q2-SRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1149.5999999999999" y="-33.733133433283363"/>
+        </scene>
+        <!--多文件-->
+        <scene sceneID="be5-aj-iWh">
+            <objects>
+                <tableViewController title="多文件" id="XhI-s7-Mkr" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sbv-jh-UvR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="OAf-fo-EuC">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MultipleCell_1" rowHeight="60" id="FBu-hQ-q4b" customClass="MultipleCell" customModule="DownLoader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FBu-hQ-q4b" id="ESe-86-41U">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W9K-S7-2ak">
+                                                    <rect key="frame" x="15" y="7" width="345" height="2"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </progressView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cg-Zl-C9m">
+                                                    <rect key="frame" x="15" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="开始"/>
+                                                    <connections>
+                                                        <action selector="startClick:" destination="FBu-hQ-q4b" eventType="touchUpInside" id="nkE-0K-3z9"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdx-ZN-sd2">
+                                                    <rect key="frame" x="112" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="暂停"/>
+                                                    <connections>
+                                                        <action selector="pauseClick:" destination="FBu-hQ-q4b" eventType="touchUpInside" id="9Ar-R4-9mv"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9B-8C-IMm">
+                                                    <rect key="frame" x="300" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="停止"/>
+                                                    <connections>
+                                                        <action selector="stopClick:" destination="FBu-hQ-q4b" eventType="touchUpInside" id="8PR-Xr-6qn"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCS-n9-6Xd">
+                                                    <rect key="frame" x="206" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="继续"/>
+                                                    <connections>
+                                                        <action selector="resumeClick:" destination="FBu-hQ-q4b" eventType="touchUpInside" id="OFH-J3-sSS"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MultipleCell_2" rowHeight="60" id="Aeu-X1-rRs" customClass="MultipleCell" customModule="DownLoader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aeu-X1-rRs" id="Iqn-6w-adh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="djO-tK-6gS">
+                                                    <rect key="frame" x="15" y="7" width="345" height="2"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </progressView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9M-q7-QtK">
+                                                    <rect key="frame" x="15" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="开始"/>
+                                                    <connections>
+                                                        <action selector="startClick:" destination="Aeu-X1-rRs" eventType="touchUpInside" id="bVw-Yd-n9X"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc1-Og-eUy">
+                                                    <rect key="frame" x="112" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="暂停"/>
+                                                    <connections>
+                                                        <action selector="pauseClick:" destination="Aeu-X1-rRs" eventType="touchUpInside" id="lci-vk-aRu"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9z-As-M0S">
+                                                    <rect key="frame" x="300" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="停止"/>
+                                                    <connections>
+                                                        <action selector="stopClick:" destination="Aeu-X1-rRs" eventType="touchUpInside" id="Gxf-AC-gVu"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VM-9J-gEV">
+                                                    <rect key="frame" x="206" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="继续"/>
+                                                    <connections>
+                                                        <action selector="resumeClick:" destination="Aeu-X1-rRs" eventType="touchUpInside" id="tX4-Gh-d3r"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MultipleCell_3" rowHeight="60" id="bkS-aG-wAd" customClass="MultipleCell" customModule="DownLoader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="120" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bkS-aG-wAd" id="RDi-dJ-nll">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HTU-OJ-ocI">
+                                                    <rect key="frame" x="15" y="7" width="345" height="2"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </progressView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTi-Nt-wng">
+                                                    <rect key="frame" x="15" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="开始"/>
+                                                    <connections>
+                                                        <action selector="startClick:" destination="bkS-aG-wAd" eventType="touchUpInside" id="gxg-Aj-Zxf"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRc-yM-ix9">
+                                                    <rect key="frame" x="112" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="暂停"/>
+                                                    <connections>
+                                                        <action selector="pauseClick:" destination="bkS-aG-wAd" eventType="touchUpInside" id="KSn-E2-gsD"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjN-fF-kyb">
+                                                    <rect key="frame" x="300" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="停止"/>
+                                                    <connections>
+                                                        <action selector="stopClick:" destination="bkS-aG-wAd" eventType="touchUpInside" id="LqX-5x-Zd9"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIh-mp-ehe">
+                                                    <rect key="frame" x="206" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="继续"/>
+                                                    <connections>
+                                                        <action selector="resumeClick:" destination="bkS-aG-wAd" eventType="touchUpInside" id="cpu-Pp-ayk"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MultipleCell_4" rowHeight="60" id="0DW-8F-Zoq" customClass="MultipleCell" customModule="DownLoader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="180" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0DW-8F-Zoq" id="JwJ-iK-jOb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p3I-ga-wxt">
+                                                    <rect key="frame" x="15" y="7" width="345" height="2"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </progressView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rq2-3u-7x7">
+                                                    <rect key="frame" x="15" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="开始"/>
+                                                    <connections>
+                                                        <action selector="startClick:" destination="0DW-8F-Zoq" eventType="touchUpInside" id="BZp-es-w2t"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eak-O4-VaM">
+                                                    <rect key="frame" x="112" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="暂停"/>
+                                                    <connections>
+                                                        <action selector="pauseClick:" destination="0DW-8F-Zoq" eventType="touchUpInside" id="Wwg-pD-26k"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzR-nZ-YlS">
+                                                    <rect key="frame" x="300" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="停止"/>
+                                                    <connections>
+                                                        <action selector="stopClick:" destination="0DW-8F-Zoq" eventType="touchUpInside" id="lOy-fn-NeG"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UT-vG-Knw">
+                                                    <rect key="frame" x="206" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="继续"/>
+                                                    <connections>
+                                                        <action selector="resumeClick:" destination="0DW-8F-Zoq" eventType="touchUpInside" id="fwY-gM-eVS"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MultipleCell_5" rowHeight="60" id="scZ-IO-fkH" customClass="MultipleCell" customModule="DownLoader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="240" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="scZ-IO-fkH" id="8QA-xZ-A2B">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CXO-42-ADX">
+                                                    <rect key="frame" x="15" y="7" width="345" height="2"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </progressView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yun-sE-klS">
+                                                    <rect key="frame" x="15" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="开始"/>
+                                                    <connections>
+                                                        <action selector="startClick:" destination="scZ-IO-fkH" eventType="touchUpInside" id="Xc9-co-47j"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzA-hO-VFp">
+                                                    <rect key="frame" x="112" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="暂停"/>
+                                                    <connections>
+                                                        <action selector="pauseClick:" destination="scZ-IO-fkH" eventType="touchUpInside" id="RKq-lj-dEN"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-v2-NWg">
+                                                    <rect key="frame" x="300" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="停止"/>
+                                                    <connections>
+                                                        <action selector="stopClick:" destination="scZ-IO-fkH" eventType="touchUpInside" id="1Y4-js-RhJ"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsK-aA-roK">
+                                                    <rect key="frame" x="206" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="继续"/>
+                                                    <connections>
+                                                        <action selector="resumeClick:" destination="scZ-IO-fkH" eventType="touchUpInside" id="baY-ab-GIs"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MultipleCell_6" rowHeight="60" id="mHI-HI-Ud0" customClass="MultipleCell" customModule="DownLoader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="300" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mHI-HI-Ud0" id="ADg-1I-c5r">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BRz-p9-gAn">
+                                                    <rect key="frame" x="15" y="7" width="345" height="2"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </progressView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36w-K5-nuc">
+                                                    <rect key="frame" x="15" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="开始"/>
+                                                    <connections>
+                                                        <action selector="startClick:" destination="mHI-HI-Ud0" eventType="touchUpInside" id="9GR-GN-I4b"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvT-cF-4Bn">
+                                                    <rect key="frame" x="112" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="暂停"/>
+                                                    <connections>
+                                                        <action selector="pauseClick:" destination="mHI-HI-Ud0" eventType="touchUpInside" id="pvp-pA-10x"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHZ-dM-EZI">
+                                                    <rect key="frame" x="300" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="停止"/>
+                                                    <connections>
+                                                        <action selector="stopClick:" destination="mHI-HI-Ud0" eventType="touchUpInside" id="5Hx-o2-Zk5"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1m-4m-J7k">
+                                                    <rect key="frame" x="206" y="17" width="60" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.86666666670000003" green="0.63137254899999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="继续"/>
+                                                    <connections>
+                                                        <action selector="resumeClick:" destination="mHI-HI-Ud0" eventType="touchUpInside" id="NH4-Mm-4IS"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="XhI-s7-Mkr" id="lC3-TR-IVG"/>
+                            <outlet property="delegate" destination="XhI-s7-Mkr" id="yB3-tP-rlN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fAP-O2-aLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150" y="644"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TZD-6K-kxG">
+            <objects>
+                <navigationController id="EJk-wP-ydl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WeQ-GJ-CsQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PXH-IL-PpQ" kind="relationship" relationship="rootViewController" id="naN-cB-hEA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l1G-9Q-anJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-492" y="131"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="STc-uL-idU">
+            <objects>
+                <tableViewController id="PXH-IL-PpQ" customClass="ViewController" customModule="DownLoader" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vrc-Oh-J4P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="QMp-YU-1SV">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SingleCell" textLabel="m7E-2c-zZa" style="IBUITableViewCellStyleDefault" id="cwx-eE-54b">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cwx-eE-54b" id="kfC-4u-aXW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="单个文件下载" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m7E-2c-zZa">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="5f4-qo-S1U" kind="show" id="4gS-Zq-Ayv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MultipleCell" textLabel="Lsl-fC-IeA" style="IBUITableViewCellStyleDefault" id="iHT-hd-HIS">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iHT-hd-HIS" id="n1V-mb-GMe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="多个文件下载" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lsl-fC-IeA">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="XhI-s7-Mkr" kind="show" id="RVp-Vg-XJa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="PXH-IL-PpQ" id="DeI-K5-1SH"/>
+                            <outlet property="delegate" destination="PXH-IL-PpQ" id="LV5-gB-RBJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ke5-vi-xXZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0UY-mU-xDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="131"/>
+        </scene>
+    </scenes>
+</document>
